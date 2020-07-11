@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onClick()">
+        <ion-icon slot="start"  name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{product.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides mode="md" pager="md" scrollbar="md">
+    <ion-slide *ngFor="let image of productImages | async as list">
+      <ion-img [src]="image"></ion-img>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
